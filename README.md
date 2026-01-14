@@ -29,7 +29,7 @@ O projeto utiliza modelos de classificação binária treinados com dados histó
 
 ## Como Usar:
 - Abra o terminal na raiz do projeto
-- Digite o comando: ```docker-compose up --build``` e o sistema vai estar no ar (Portas - Spring:8081, MySQL:3307, fastAPI:5000)
+- Digite o comando: ```docker-compose up --build``` e o sistema vai estar no ar (Portas - Spring:```8081```, MySQL:```3307```, fastAPI:```5000```)
 - Abra seu navegador e digite ```http://localhost:8080/swagger-ui.html``` para testar os endpoints
 
 ## Estrutura do projeto
