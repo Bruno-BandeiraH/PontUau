@@ -4,7 +4,7 @@
 A REST API for flights that predicts whether a flight will be delayed or on time.
 
 ## Endpoints
-![endpoints](src/main/resources/static/img/endpoint.png)
+![endpoints](src/main/resources/static/img/endpoints.jpeg)
 
 ## Functionalities
 - Predict - Tells if a flight is gonna be on time or delayed.

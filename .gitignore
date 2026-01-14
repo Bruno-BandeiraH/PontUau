@@ -1,0 +1,46 @@
+# --- JAVA (Spring Boot / Maven) ---
+**/target/
+**/mvnw
+**/mvnw.cmd
+**/.mvn/
+*.class
+
+# --- PYTHON ---
+**/venv/
+**/.venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# --- IDEs (IntelliJ, VS Code, Eclipse) ---
+.idea/
+*.iml
+.vscode/
+.settings/
+.project/
+.classpath/
+bin/
+
+# --- SISTEMA ---
+.DS_Store
+Thumbs.db
+
+# --- DOCKER (Opcional) ---
+# Se você tiver dados persistentes em volumes locais:
+docker-data/
