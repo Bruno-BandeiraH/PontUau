@@ -1,129 +1,143 @@
 
-# PontUau
+# 🛫 PontUau - Previsão Inteligente de Atraso de Voos
 
-PontUau is a flight punctuality prediction system that uses machine learning and statistical analysis to predict whether a flight will be delayed or not.
+PontUau é uma solução completa de previsão de atrasos de voos baseada em Machine Learning, desenvolvida pela equipe Araras Selvagens durante o Hackathon promovido pela Alura em parceria com a No Country.
 
-## Main goals
-- Predict flight delays in advance 
-- Identify ponctuality patterns by airline
-- Analyse historical statistics of specifics routes
-- Provide insights for operational improvement
+O projeto utiliza modelos de classificação binária treinados com dados históricos reais de voos nacionais para determinar se um voo será Pontual ou Atrasado, fornecendo também a probabilidade estimada da previsão.
+
+## Objetivos Principais
+- Prever atrasos de voos com antecedência
+- Identificar padrões de pontualidade por companhia aérea
+- Analisar estatísticas históricas de rotas específicas
+- Fornecer insights para melhoria operacional
 
 ## Endpoints
 ![endpoints](./flight-prediction-api/src/main/resources/static/img/endpoints.jpeg)
 
-## Functionalities
-- Predict - Tells if a flight is gonna be on time or delayed.
-- Statistics - Show how many predictions were made, and how much were delayed or on time.
-- Airlines - Show the Airline with most prediction flights on time or delayed, by year or from all time.
-- Routes - Bring the route with most delayed or on time predictions. 
+## Funcionalidades
+- Prever - Indicar se um voo chegará no horário ou atrasado.
+- Estatísticas - Mostrar quantas previsões foram feitas e quantas resultaram em atrasos ou voos no horário.
+- Companhias Aéreas - Mostrar a companhia aérea com o maior número de previsões de voos no horário ou atrasados, por ano ou desde o início.
+- Rotas - Exibir a rota com o maior número de previsões de atrasos ou voos no horário.
 
-### Requirements for running
+### Requisitos para rodar
 - Docker 29.1.2 or +.
-### Requirements for developing
+### Requisitos para desenvolver
 - Java 21 or +;
 - Python 3.12.10 or +;
 - Maven;
 
-## How to use:
-- Open the terminal on the root of the project
-- Enter the command: ```docker-compose up --build```
-- Open your browser and type ```http://localhost:8080/swagger-ui.html``` to test the endpoints
+## Como Usar:
+- Abra o terminal na raiz do projeto
+- Digite o comando: ```docker-compose up --build``` e o sistema vai estar no ar (Portas - Spring:8081, MySQL:3307, fastAPI:5000)
+- Abra seu navegador e digite ```http://localhost:8080/swagger-ui.html``` para testar os endpoints
 
-## Project Structure
+## Estrutura do projeto
 ```
 PontUau/
-├── flight-prediction-api/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── com/
-│   │   │   │       ├── flightontime/
-│   │   │   │           ├── api/
-│   │   │   │               ├── config/
-│   │   │   │               │   ├── CorsConfig.java
-│   │   │   │               │   └── WebClientConfig.java
-│   │   │   │               ├── controller/
-│   │   │   │               │   ├── FlightController.java
-│   │   │   │               │   └── PredictionController.java
-│   │   │   │               ├── domain/
-│   │   │   │               │   ├── Flight.java
-│   │   │   │               │   └── FlightRepository.java
-│   │   │   │               ├── dto/
-│   │   │   │               │   ├── AirlineDelayedData.java
-│   │   │   │               │   ├── AirlineOnTimeData.java
-│   │   │   │               │   ├── FlightDTO.java
-│   │   │   │               │   ├── PredictionRequestDTO.java
-│   │   │   │               │   ├── PredictionResponseDTO.java
-│   │   │   │               │   ├── RouteDelayedData.java
-│   │   │   │               │   ├── RouteOnTimeData.java
-│   │   │   │               │   ├── StatisticsByYearData.java
-│   │   │   │               │   └── StatisticsData.java
-│   │   │   │               ├── infra/
-│   │   │   │               │   ├── exception/
-│   │   │   │               │   │   ├── ResourceNotFoundException.java
-│   │   │   │               │   │   └── RestExceptionHandler.java
-│   │   │   │               │   ├── validations/
-│   │   │   │               │   │   ├── time/
-│   │   │   │               │   │   │   └── ExpectedTime.java
-│   │   │   │               │   │   └── RepositoryValidator.java
-│   │   │   │               │   └── ValidatorException.java
-│   │   │   │               ├── service/
-│   │   │   │               │   ├── FlightService.java
-│   │   │   │               │   └── PredictionService.java
-│   │   │   │               └── FlightPredictionApiApplication.java
-│   │   │   ├── resources/
-│   │   │       ├── static/
-│   │   │       │   ├── img/
-│   │   │       │       └── endpoints.jpeg
-│   │   │       ├── templates/
-│   │   │       └── application.properties
-│   │   ├── test/
-│   │       ├── java/
-│   │           ├── com/
-│   │               ├── flightontime/
-│   │                   ├── api/
-│   │                       ├── controller/
-│   │                       │   └── PredictionControllerTest.java
-│   │                       ├── domain/
-│   │                       │   └── FlightTest.java
-│   │                       ├── infra/
-│   │                       │   ├── validations/
-│   │                       │       ├── time/
-│   │                       │           └── ExpectedTimeTest.java
-│   │                       ├── service/
-│   │                       │   └── PredictionServiceTest.java
-│   │                       └── FlightPredictionApiApplicationTests.java
-│   ├── Dockerfile
-│   ├── README.md
-│   └── pom.xml
-├── flight-prediction-model/
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── __init__.py
-│   │   │   └── routes.py
-│   │   ├── config/
-│   │   │   ├── __init__.py
-│   │   │   └── settings.py
-│   │   ├── models/
-│   │   │   ├── __init__.py
-│   │   │   └── schemas.py
-│   │   ├── services/
-│   │   │   ├── __init__.py
-│   │   │   ├── feature_engineering.py
-│   │   │   └── prediction_service.py
-│   │   ├── __init__.py
-│   │   └── main.py
-│   ├── model/
-│   │   └── modelo_previsao_atraso_voos_v2.pkl
-│   ├── Dockerfile
-│   ├── README.md
-│   └── requirements.txt
+├── flight-prediction-api/  # API Principal
+├── flight-prediction-model/  # fastAPI com o modelo implementado
 ├── README.md
 └── docker-compose.yml
 ```
 
-## Development Team
+#### flight-prediction-api
+```
+flight-prediction-api/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── com/
+│   │   │       ├── flightontime/
+│   │   │           ├── api/
+│   │   │               ├── config/
+│   │   │               │   ├── CorsConfig.java
+│   │   │               │   └── WebClientConfig.java
+│   │   │               ├── controller/
+│   │   │               │   ├── FlightController.java
+│   │   │               │   └── PredictionController.java
+│   │   │               ├── domain/
+│   │   │               │   ├── Flight.java
+│   │   │               │   └── FlightRepository.java
+│   │   │               ├── dto/
+│   │   │               │   ├── AirlineDelayedData.java
+│   │   │               │   ├── AirlineOnTimeData.java
+│   │   │               │   ├── FlightDTO.java
+│   │   │               │   ├── PredictionRequestDTO.java
+│   │   │               │   ├── PredictionResponseDTO.java
+│   │   │               │   ├── RouteDelayedData.java
+│   │   │               │   ├── RouteOnTimeData.java
+│   │   │               │   ├── StatisticsByYearData.java
+│   │   │               │   └── StatisticsData.java
+│   │   │               ├── infra/
+│   │   │               │   ├── exception/
+│   │   │               │   │   ├── ResourceNotFoundException.java
+│   │   │               │   │   └── RestExceptionHandler.java
+│   │   │               │   ├── validations/
+│   │   │               │   │   ├── time/
+│   │   │               │   │   │   └── ExpectedTime.java
+│   │   │               │   │   └── RepositoryValidator.java
+│   │   │               │   └── ValidatorException.java
+│   │   │               ├── service/
+│   │   │               │   ├── FlightService.java
+│   │   │               │   └── PredictionService.java
+│   │   │               └── FlightPredictionApiApplication.java
+│   │   ├── resources/
+│   │       ├── static/
+│   │       │   ├── img/
+│   │       │       └── endpoint.png
+│   │       ├── templates/
+│   │       └── application.properties
+│   ├── test/
+│       ├── java/
+│           ├── com/
+│               ├── flightontime/
+│                   ├── api/
+│                       ├── controller/
+│                       │   └── PredictionControllerTest.java
+│                       ├── domain/
+│                       │   └── FlightTest.java
+│                       ├── infra/
+│                       │   ├── validations/
+│                       │       ├── time/
+│                       │           └── ExpectedTimeTest.java
+│                       ├── service/
+│                       │   └── PredictionServiceTest.java
+│                       └── FlightPredictionApiApplicationTests.java
+├── Dockerfile
+├── README.md
+├── mvnw
+├── mvnw.cmd
+└── pom.xml
+```
+
+#### flight-prediction-model
+```
+flight-prediction-model/
+├── app/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── schemas.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── feature_engineering.py
+│   │   └── prediction_service.py
+│   ├── __init__.py
+│   └── main.py
+├── model/
+│   └── modelo_previsao_atraso_voos_v2.pkl
+├── Dockerfile
+├── README.md
+└── requirements.txt
+```
+
+## Araras Selvagens
 
 ### Backend
 
@@ -178,21 +192,24 @@ PontUau/
         <sub><b>Cristiano Silveira</b></sub>
       </a>
     </td>
-    <td align="center">
-      <a href="https://github.com/arley">
-        <img src="https://github.com/.png" width="150px;" alt="Foto de Arley Ribeiro"/><br>
-        <sub><b>Arley Ribeiro</b></sub>
-      </a>
-    </td>
   </tr>
 </table>
 
 
-## Technologies
-- Backend: Spring Boot 4, fastAPI
-- Language: Java 21
-- Database: MySQL 8+
-- Documentation: SpringDoc
-- Tests: JUnit 5, Mockito
-- Versioning: Git, GitHub
+## Tecnologias
+
+### Backend
+- Frameworks: Spring Boot, fastAPI
+- Lingaigens: Java, Python
+- Banco de dados: MySQL
+- Documentação: SpringDoc
+- Testes: JUnit 5, Mockito
+- Versionamento: Git, GitHub
 - Build: Maven
+
+### Data Science
+- Python
+- Pandas
+- scikit-learn
+- Jupyter Notebook
+- Modelagem supervisionada
