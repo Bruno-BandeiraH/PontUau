@@ -195,6 +195,11 @@ flight-prediction-model/
   </tr>
 </table>
 
+### Repositórios anteriores:
+- [API Principal](https://github.com/Bruno-BandeiraH/flight-on-time-api)
+- [API integrando o modelo de ML](https://github.com/Bruno-BandeiraH/flight-prediction-model/)
+- [Data Science](https://github.com/gabriel-schineider/flight-on-time-API-Data_Science_Team/)
+
 
 ## Tecnologias
 
