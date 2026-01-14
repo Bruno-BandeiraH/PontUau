@@ -16,9 +16,9 @@ O projeto utiliza modelos de classificação binária treinados com dados histó
 
 ## Funcionalidades
 - Prever - Indicar se um voo chegará no horário ou atrasado.
-- Estatísticas - Mostrar quantas previsões foram feitas e quantas resultaram em atrasos ou voos no horário.
-- Companhias Aéreas - Mostrar a companhia aérea com o maior número de previsões de voos no horário ou atrasados, por ano ou desde o início.
-- Rotas - Exibir a rota com o maior número de previsões de atrasos ou voos no horário.
+- Estatísticas - Mostrar quantas previsões foram feitas e quantas resultaram em atrasos ou voos pontuais.
+- Companhias Aéreas - Mostrar a companhia aérea com o maior número de previsões de voos pontuais ou atrasados, por ano ou desde o início.
+- Rotas - Exibir a rota com o maior número de previsões de atrasos ou voos pontuais.
 
 ### Requisitos para rodar
 - Docker 29.1.2 or +.
@@ -33,9 +33,9 @@ O projeto utiliza modelos de classificação binária treinados com dados histó
 - Abra seu navegador e digite ```http://localhost:8080/swagger-ui.html``` para testar os endpoints
 
 
+
 ## Exemplo de requisição POST no endpoint /predict
 A variável ```previsao_atraso``` retorna 0 (pontual) ou 1 (atrasado).
-
 
 Requisição: 
 ```JSON
