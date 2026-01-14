@@ -125,19 +125,58 @@ PontUau/
 
 ## Development Team
 
-<div align="center">
-
-  <a href="https://github.com/seu-usuario">
-    <img src="https://github.com/Bruno-BandeiraH.png" width="150px;" alt="Foto do Seu Nome"/><br>
-    <b>Bruno Bandeira</b>
-  </a>
-
-  <a href="https://github.com/colega1">
-    <img src="https://github.com/Rafael-LynX.png" width="150px;" alt="Foto do Colega"/><br>
-    <b>Rafael Vieira</b>
-  </a>
-
-</div>
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Bruno-BandeiraH">
+        <img src="https://github.com/Bruno-BandeiraH.png" width="150px;" alt="Foto de Bruno Bandeira"/><br>
+        <sub><b>Bruno Bandeira</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Rafael-LynX">
+        <img src="https://github.com/Rafael-LynX.png" width="150px;" alt="Foto de Rafael Vieira"/><br>
+        <sub><b>Rafael Vieira</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/RichardFFreitas">
+        <img src="https://github.com/RichardFFreitas.png" width="150px;" alt="Foto de Richard Freitas"/><br>
+        <sub><b>Richard Freitas</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gabriel-schineider">
+        <img src="https://github.com/gabriel-schineider.png" width="150px;" alt="Foto de Gabriel Schineider"/><br>
+        <sub><b>Gabriel Schineider</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/GleiceAraujo22">
+        <img src="https://github.com/GleiceAraujo22.png" width="150px;" alt="Foto de Gleice Araújo"/><br>
+        <sub><b>Gleice Araújo</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/WellingtonGabriel20">
+        <img src="https://github.com/WellingtonGabriel20.png" width="150px;" alt="Foto de Richard Freitas"/><br>
+        <sub><b>Wellington Silva</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Cristiano">
+        <img src="https://github.com/RichardFFreitas.png" width="150px;" alt="Foto de Cristiano Silveira"/><br>
+        <sub><b>Cristiano Silveira</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/arley">
+        <img src="https://github.com/RichardFFreitas.png" width="150px;" alt="Foto de Arley Ribeiro"/><br>
+        <sub><b>Arley Ribeiro</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Technologies
 - Backend: Spring Boot 4, fastAPI
