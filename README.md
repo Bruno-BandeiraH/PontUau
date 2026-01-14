@@ -1,9 +1,9 @@
 
 # 🛫 PontUau - Previsão Inteligente de Atraso de Voos
 
-PontUau é uma solução completa de previsão de atrasos de voos baseada em Machine Learning, desenvolvida pela equipe Araras Selvagens durante o Hackathon promovido pela Alura em parceria com a No Country.
+PontUau é um sistema de previsão de atrasos de voos baseado em Machine Learning, desenvolvido pela equipe Araras Selvagens durante o Hackathon promovido pela Alura em parceria com a No Country.
 
-O projeto utiliza modelos de classificação binária treinados com dados históricos reais de voos nacionais para determinar se um voo será Pontual ou Atrasado, fornecendo também a probabilidade estimada da previsão.
+O projeto utiliza modelos de classificação binária treinados com dados históricos reais de voos nacionais para determinar se um voo será Pontual ou Atrasado, fornecendo a probabilidade estimada da previsão e contando com recursos de análise de banco de dados.
 
 ## Objetivos Principais
 - Prever atrasos de voos com antecedência
