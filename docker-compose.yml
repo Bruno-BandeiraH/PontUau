@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  flight-mysql:
+    image: mysql:8.4
+    container_name: flight-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: flight_predictions
+      MYSQL_USER: flight_user
+      MYSQL_PASSWORD: flight_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - flight-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  flight-predictor:
+    build:
+      context: ./flight-prediction-model
+      dockerfile: Dockerfile
+    container_name: flight-predictor
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - flight-network
+
+  api:
+    build: ./flight-prediction-api
+    container_name: flight-api
+    restart: always
+    depends_on:
+      flight-mysql:
+        condition: service_healthy
+      flight-predictor:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://flight-mysql:3306/flight_predictions?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: flight_user
+      SPRING_DATASOURCE_PASSWORD: flight_pass
+      PREDICTOR_API_URL: http://flight-predictor:8000
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+    networks:
+      - flight-network
+
+volumes:
+  mysql_data:
+
+networks:
+  flight-network:
+    driver: bridge
