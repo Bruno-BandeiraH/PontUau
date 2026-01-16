@@ -1,0 +1,43 @@
+{
+  "aeroportos_pontuais": {
+    "probabilidade_atraso": {
+      "SBMQ": 0.31312742829322815,
+      "SBMO": 0.35630571842193604,
+      "SBBR": 0.36156877875328064,
+      "SBNT": 0.42140188813209534,
+      "SBGL": 0.4221794307231903
+    },
+    "origem_nome": {
+      "SBMQ": "Macapá (MCP)",
+      "SBMO": "Maceió (MCZ)",
+      "SBBR": "Brasília (BSB)",
+      "SBNT": "Natal (NAT)",
+      "SBGL": "Galeão (GIG)"
+    }
+  },
+  "melhores_horarios": {
+    "probabilidade_atraso": {
+      "10": 0.3800645172595978,
+      "6": 0.381212055683136,
+      "8": 0.3822978734970093,
+      "22": 0.4498889446258545,
+      "20": 0.44992586970329285
+    }
+  },
+  "melhores_turnos": {
+    "probabilidade_atraso": {
+      "manha": 0.3811914920806885,
+      "noite": 0.45008915662765503,
+      "tarde": 0.4630005359649658
+    }
+  },
+  "companhias_pontuais": {
+    "probabilidade_atraso": {
+      "ONE": 0.41233646869659424,
+      "TAM": 0.41273874044418335,
+      "GLO": 0.4398966431617737,
+      "AZU": 0.46073636412620544
+    }
+  },
+  "total_simulacoes": 13680
+}

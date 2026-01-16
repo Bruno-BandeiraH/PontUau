@@ -1,0 +1,21 @@
+/* Section Headers - Hide for ultra-compact view */
+.section-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-tag {
+    display: none;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.section-description {
+    display: none;
+}

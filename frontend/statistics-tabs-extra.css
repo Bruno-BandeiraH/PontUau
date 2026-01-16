@@ -1,0 +1,15 @@
+/* Reduce section header spacing */
+.tab-content .section-header {
+    margin-bottom: 0.75rem;
+}
+
+.tab-content .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Make tab content wrapper more compact */
+.tab-content-wrapper {
+    position: relative;
+    min-height: 350px;
+}

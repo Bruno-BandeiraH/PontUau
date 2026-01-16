@@ -1,0 +1,514 @@
+/* ==========================================
+   STATISTICS PAGE STYLES
+   ========================================== */
+
+/* Stats Hero Section */
+.stats-hero {
+    padding: 65px 0 15px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.stats-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.stats-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: none;
+}
+
+/* Active Navigation Link */
+.header-nav a.active {
+    color: var(--primary-purple);
+}
+
+.header-nav a.active::after {
+    width: 100%;
+}
+
+/* Stats Sections */
+.stats-section {
+    padding: 0.5rem 0;
+    background: var(--dark-bg);
+}
+
+.stats-section.alt-bg {
+    background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-card) 100%);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Stat Card */
+.stat-card {
+    background: var(--dark-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Rank Badge */
+.rank-badge {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.rank-badge.gold {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #1a1a2e;
+}
+
+.rank-badge.silver {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+    color: #1a1a2e;
+}
+
+.rank-badge.bronze {
+    background: linear-gradient(135deg, #cd7f32 0%, #e8a87c 100%);
+    color: #1a1a2e;
+}
+
+/* Stat Icon */
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--accent-cyan);
+}
+
+/* Stat Content */
+.stat-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.15rem;
+}
+
+.stat-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+    color: var(--text-primary);
+}
+
+.stat-code {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.4rem;
+}
+
+/* Progress Bar */
+.stat-progress {
+    margin-top: 0.4rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+    font-size: 0.7rem;
+}
+
+.progress-text {
+    color: var(--text-secondary);
+}
+
+.progress-value {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--success-gradient);
+    border-radius: 10px;
+    transition: width 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Delay indicator (red for high delay) */
+.progress-bar-fill.high-delay {
+    background: var(--warning-gradient);
+}
+
+.progress-bar-fill.medium-delay {
+    background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);
+}
+
+.progress-bar-fill.low-delay {
+    background: var(--success-gradient);
+}
+
+/* Period Grid */
+.period-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.period.stat-card {
+    background: var(--dark-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    padding: 1.25rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.period-card {
+    background: var(--dark-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.period-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.period-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
+}
+
+.period-card:hover::before {
+    opacity: 0.05;
+}
+
+.period-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.period-name {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.period-percentage {
+    font-size: 1.35rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.period-description {
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Airline Grid */
+.airline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.airline-card {
+    background: var(--dark-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.airline-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: var(--shadow-lg);
+}
+
+.airline-logo-img {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+}
+
+.airline-logo-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(1.1);
+    transform: scale(1.2);
+}
+
+.airline-name {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.airline-slogan {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.4rem;
+    min-height: 1.8rem;
+    line-height: 1.3;
+}
+
+/* Insights Summary */
+.insights-summary {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    display: none;
+}
+
+.summary-card {
+    background: var(--dark-elevated);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    border-radius: 24px;
+    padding: var(--spacing-3xl);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.summary-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 3rem;
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+}
+
+.summary-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+}
+
+.insights-list {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    text-align: left;
+}
+
+.insight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    transition: all var(--transition-normal);
+}
+
+.insight-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateX(5px);
+}
+
+.insight-item i {
+    color: var(--success-green);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.insight-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.insight-item strong {
+    color: var(--text-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .period-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .airline-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .stats-hero {
+        padding: 100px 0 60px;
+    }
+
+    .stats-title {
+        font-size: 2rem;
+    }
+
+    .summary-card {
+        padding: var(--spacing-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .rank-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .stat-name {
+        font-size: 1.25rem;
+    }
+
+    .period-icon {
+        font-size: 2.5rem;
+    }
+
+    .period-name {
+        font-size: 1.5rem;
+    }
+
+    .period-percentage {
+        font-size: 2rem;
+    }
+}

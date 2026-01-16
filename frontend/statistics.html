@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Estatísticas de Pontualidade de Voos - Insights baseados em Machine Learning sobre os melhores horários e aeroportos para viajar.">
+    <title>Estatísticas de Voos - PontUau</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Imagens/arara selvagem.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="statistics.css">
+    <link rel="stylesheet" href="statistics-tabs.css">
+    <link rel="stylesheet" href="statistics-tabs-extra.css">
+</head>
+
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <a href="index.html" class="header-logo">
+                <img src="Imagens/arara selvagem.jpg" alt="Araras Selvagens" class="header-logo-image">
+                <span class="gradient-text">PontUau</span>
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Início</a>
+                <a href="index.html#hackathon">Hackathon</a>
+                <a href="index.html#parceiros">Parceiros</a>
+                <a href="index.html#solucao">Solução</a>
+                <a href="index.html#equipe">Equipe</a>
+                <a href="calculator.html">Calculadora</a>
+                <a href="statistics.html" class="active">Estatísticas</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="stats-hero">
+        <div class="container">
+            <div class="stats-hero-content">
+                <span class="section-tag">Insights de Machine Learning</span>
+                <h1 class="stats-title">Estatísticas de Pontualidade de Voos</h1>
+                <p class="stats-subtitle">
+                    Análise baseada em 3.240 simulações do modelo de ML para identificar os melhores aeroportos,
+                    horários e companhias aéreas
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabbed Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="airports">
+                    <i class="fas fa-plane-departure"></i>
+                    Aeroportos
+                </button>
+                <button class="tab-button" data-tab="times">
+                    <i class="fas fa-clock"></i>
+                    Horários
+                </button>
+                <button class="tab-button" data-tab="periods">
+                    <i class="fas fa-sun"></i>
+                    Períodos
+                </button>
+                <button class="tab-button" data-tab="airlines">
+                    <i class="fas fa-building"></i>
+                    Companhias
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content-wrapper">
+                <!-- Airports Tab -->
+                <div class="tab-content active" id="airports-tab">
+                    <div class="section-header">
+                        <h2 class="section-title">Aeroportos Mais Pontuais</h2>
+                    </div>
+                    <div class="stats-grid" id="airport-rankings">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Times Tab -->
+                <div class="tab-content" id="times-tab">
+                    <div class="section-header">
+                        <h2 class="section-title">Melhores Horários para Voar</h2>
+                    </div>
+                    <div class="stats-grid" id="best-times">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Periods Tab -->
+                <div class="tab-content" id="periods-tab">
+                    <div class="section-header">
+                        <h2 class="section-title">Comparação de Turnos</h2>
+                    </div>
+                    <div class="period-grid" id="period-analysis">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Airlines Tab -->
+                <div class="tab-content" id="airlines-tab">
+                    <div class="section-header">
+                        <h2 class="section-title">Desempenho por Companhia</h2>
+                    </div>
+                    <div class="airline-grid" id="airline-performance">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Summary Section -->
+    <section class="stats-section insights-summary">
+        <div class="container">
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Principais Insights</h3>
+                <div class="insights-list">
+                    <div class="insight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Voos da manhã</strong> (6h-10h) têm a menor probabilidade de atraso</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Brasília (BSB)</strong> é o aeroporto mais pontual do Brasil</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>TAM e ONE</strong> apresentam os melhores índices de pontualidade</p>
+                    </div>
+                    <div class="insight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Voos à <strong>tarde</strong> têm maior probabilidade de atraso</p>
+                    </div>
+                </div>
+                <a href="calculator.html" class="cta-button">
+                    <span>Calcular Previsão do Seu Voo</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="gradient-text">PontUau</h3>
+                    <p>Previsão inteligente baseada em treinamento de Machine Learning</p>
+                </div>
+
+                <div class="footer-info">
+                    <p class="footer-text">
+                        Projeto <strong>PontUau</strong> — desenvolvido pela equipe <strong>Araras Selvagens</strong>
+                        <br>durante o Hackathon Alura + No Country
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 PontUau. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="index.html">Início</a>
+                    <a href="index.html#hackathon">Hackathon</a>
+                    <a href="index.html#parceiros">Parceiros</a>
+                    <a href="index.html#solucao">Solução</a>
+                    <a href="index.html#equipe">Equipe</a>
+                    <a href="calculator.html">Calculadora</a>
+                    <a href="statistics.html">Estatísticas</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="statistics.js"></script>
+</body>
+
+</html>
