@@ -29,9 +29,9 @@ function displayResults() {
     }
 
     // Update probability
-    const probabilityPercent = Math.round(responseData.probabilidade * 100);
-    document.getElementById('probabilityValue').textContent = `${probabilityPercent}%`;
-    document.getElementById('probabilityBar').style.width = `${probabilityPercent}%`;
+    // const probabilityPercent = Math.round(responseData.probabilidade * 100);
+    document.getElementById('probabilityValue').textContent = `${responseData.probabilidade}`;
+    document.getElementById('probabilityBar').style.width = `${responseData.probabilidade}`;
 
     // Update flight information (usando códigos ICAO da API)
     document.getElementById('companhiaValue').textContent = requestData.icao_empresa;

@@ -9,7 +9,7 @@ public record RouteDelayedData(
     Double avgFlightTime
 ) {
     public RouteDelayedData {
-        if (delayedPercentage != null) {
+        if (delayedPercentage != null ) {
             delayedPercentage = Math.round(delayedPercentage * 100.0) / 100.0;
         }
         if(avgFlightTime != null) {

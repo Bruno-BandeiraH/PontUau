@@ -140,8 +140,8 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         icao_aerodromo_origem: origemICAO,
         icao_aerodromo_destino: destinoICAO,
         partida_prevista: formatDateTime(date, time),
-        tempo_voo_estimado_hr: calculateFlightTime(distanciaKm),
-        distancia_km: distanciaKm
+        distancia_km: distanciaKm,
+        tempo_voo_estimado_hr: calculateFlightTime(distanciaKm)
     };
 
     console.log('📤 Dados enviados para API:', apiRequest);
@@ -183,12 +183,12 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         // Front-end espera: { previsao: "Pontual" ou "Atrasado", probabilidade: 0.0-1.0 }
 
         const frontendResponse = {
-            previsao: apiResponse.previsao_atraso === 0 ? 'Pontual' : 'Atrasado',
+            previsao: apiResponse.previsao_atraso,
             probabilidade: apiResponse.probabilidade_atraso
         };
 
         console.log('✅ Previsão:', frontendResponse.previsao);
-        console.log('📊 Probabilidade:', (frontendResponse.probabilidade * 100).toFixed(0) + '%');
+        console.log('📊 Probabilidade:', frontendResponse.probabilidade);
 
         // Armazena dados no sessionStorage para exibir na página de resultado
         sessionStorage.setItem('requestData', JSON.stringify(apiRequest));
@@ -207,7 +207,7 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         // Se a API não estiver disponível, usa dados simulados
         // Isso permite que a calculadora funcione mesmo sem a API deployada
 
-        const simulatedResponse = {
+    /*    const simulatedResponse = {
             previsao: Math.random() > 0.5 ? 'Pontual' : 'Atrasado',
             probabilidade: parseFloat(Math.random().toFixed(2))
         };
@@ -221,7 +221,7 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
         sessionStorage.setItem('isSimulated', 'true'); // Flag para indicar simulação
 
         // Redireciona para página de resultado
-        window.location.href = 'result.html';
+        window.location.href = 'result.html'; */
     }
  });
 

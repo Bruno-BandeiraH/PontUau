@@ -1,6 +1,7 @@
 package com.flightontime.api.controller;
 
 import com.flightontime.api.dto.FlightDTO;
+import com.flightontime.api.dto.PredictionData;
 import com.flightontime.api.dto.PredictionRequestDTO;
 import com.flightontime.api.dto.PredictionResponseDTO;
 import com.flightontime.api.infra.validations.RepositoryValidator;
@@ -28,10 +29,11 @@ public class PredictionController {
     }
 
     @PostMapping("/predict")
-    public ResponseEntity<PredictionResponseDTO> getPrediction(@RequestBody @Valid PredictionRequestDTO requestData) {
+    public ResponseEntity<PredictionData> getPrediction(@RequestBody @Valid PredictionRequestDTO requestData) {
         validators.forEach(v -> v.validator(requestData));
         PredictionResponseDTO response = predictionService.predict(requestData);
+        PredictionData data = response.toPredictionData();
         flightService.save(new FlightDTO(requestData, response));
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(data);
     }
 }

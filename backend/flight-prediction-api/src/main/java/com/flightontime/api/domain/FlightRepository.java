@@ -98,17 +98,18 @@ public interface FlightRepository extends JpaRepository<Flight, Long> {
     List<StatisticsByYearData> getStatisticsByYear();
 
     @Query("""
-            SELECT new com.flightontime.api.dto.AirlineOnTimeData(
-                f.icaoAirline as airline,
-                COUNT(f) as totalFlights,
-                SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) as onTimeFlights,
-                (SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) * 100.0 / COUNT(f)) as onTimePercentage
-            )
-            FROM Flight f
-            WHERE YEAR(f.expectedTime) = :year
-            GROUP BY f.icaoAirline
-            HAVING COUNT(f) >= 10
-            ORDER BY (SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) * 100.0 / COUNT(f)) DESC
-        """)
+        SELECT new com.flightontime.api.dto.AirlineOnTimeData(
+            f.icaoAirline,
+            COUNT(f) as totalFlights,
+            SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) as onTimeFlights,
+            CAST(SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) AS double) * 100.0 / COUNT(f) as onTimePercentage
+        )
+        FROM Flight f
+        WHERE f.expectedTime IS NOT NULL 
+          AND YEAR(f.expectedTime) = :year
+        GROUP BY f.icaoAirline
+        HAVING COUNT(f) >= 2
+        ORDER BY (CAST(SUM(CASE WHEN f.prediction = 0 THEN 1 ELSE 0 END) AS double) * 100.0 / COUNT(f)) DESC
+    """)
     List<AirlineOnTimeData> findAirlinesWithHighestOnTimeRateByYear(@Param("year") int year);
 }
