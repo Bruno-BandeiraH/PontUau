@@ -63,13 +63,12 @@ Arquivo gerado: modelo_preditivo.pkl
 
 ## 👥 Contribuidores
 
-| Nome | Função | GitHub | LinkedIn |
-|------|--------|--------|----------|
-| **Gabriel Schineider** | Data Scientist | [gabriel-schineider](https://github.com/gabriel-schineider/) | [gabriel-schineider](https://www.linkedin.com/in/gabriel-schineider/) |
-| **Gleice Araújo** | Data Scientist | [GleiceAraujo22](https://github.com/GleiceAraujo22) | [gleicearaujo](https://www.linkedin.com/in/gleicearaujo/) |
-| **Wellington Gabriel** | Data Scientist | [WellingtonGabriel20](https://github.com/WellingtonGabriel20) | [wellingtongabriel20](https://www.linkedin.com/in/wellingtongabriel20) |
-| **Cristiano Silveira** | Data Scientist | [realcsilveira](https://github.com/realcsilveira) | [realcsilveira](https://www.linkedin.com/in/realcsilveira) |
-| **Arley Ribeiro** | Data Scientist | [ribeiroarley](https://github.com/ribeiroarley) | [ribeiroarley](https://www.linkedin.com/in/ribeiroarley) |
+| Nome | GitHub | LinkedIn |
+|------|--------|----------|
+| **Gabriel Schineider** | [gabriel-schineider](https://github.com/gabriel-schineider/) | [gabriel-schineider](https://www.linkedin.com/in/gabriel-schineider/) |
+| **Gleice Araújo** | [GleiceAraujo22](https://github.com/GleiceAraujo22) | [gleicearaujo](https://www.linkedin.com/in/gleicearaujo/) |
+| **Wellington Gabriel** | [WellingtonGabriel20](https://github.com/WellingtonGabriel20) | [wellingtongabriel20](https://www.linkedin.com/in/wellingtongabriel20) |
+| **Cristiano Silveira** | [realcsilveira](https://github.com/realcsilveira) | [realcsilveira](https://www.linkedin.com/in/realcsilveira) |
 
 ---
 
